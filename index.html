@@ -1,9 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Redirect Link</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copy Link</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #message {
+      margin-top: 20px;
+      color: green;
+    }
+  </style>
 </head>
 <body>
-  <a href="https://4cc2ffd764ae258a6c8e82db5e4417be.serveo.net/tataplay-widewine/playlist.php">https://923f5c88daa73370731b86d6593711dc.serveo.net/tataplay-widewine/playlist.php</a>
+
+  <h1>Copy Link to Clipboard</h1>
+  <button onclick="copyLink()">Copy Link</button>
+  <div id="message"></div>
+
+  <script>
+    function copyLink() {
+      const link = "https://4cc2ffd764ae258a6c8e82db5e4417be.serveo.net/tataplay-clearkey/playlist.php";
+      navigator.clipboard.writeText(link).then(() => {
+        document.getElementById("message").textContent = "Link copied to clipboard!";
+      }).catch(err => {
+        console.error("Failed to copy link: ", err);
+        document.getElementById("message").textContent = "Failed to copy link.";
+      });
+    }
+  </script>
+
 </body>
 </html>
